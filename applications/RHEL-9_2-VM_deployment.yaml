@@ -1,7 +1,7 @@
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: my-vm-{{ .Values.vmIndex | lower }}
+  name: my-vm-0
   namespace: default
 spec:
   running: true
@@ -11,7 +11,7 @@ spec:
     name: rhel.9
   dataVolumeTemplates:
     - metadata:
-        name: my-vm-{{ .Values.vmIndex | lower }}-volume
+        name: my-vm-0-volume
       spec:
         sourceRef:
           kind: DataSource
@@ -33,7 +33,7 @@ spec:
           disks:
           - name: rootdisk
             dataVolume:
-              name: my-vm-{{ .Values.vmIndex | lower }}-volume
+              name: my-vm-0-volume
           - name: cloudinitdisk
             cloudInitNoCloud:
               userData: |
