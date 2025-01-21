@@ -1,0 +1,51 @@
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: my-vm-{{ .Values.vmIndex }}
+  namespace: default
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+    - metadata:
+        name: my-vm-{{ .Values.vmIndex }}-volume
+      spec:
+        sourceRef:
+          kind: DataSource
+          name: rhel9
+          namespace: openshift-virtualization-os-images
+        storage:
+          resources:
+            requests:
+              storage: '32212254720'
+          storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        network.kubevirt.io/headlessService: headless
+    spec:
+      domain:
+        devices:
+          autoattachPodInterface: false
+          disks:
+          - name: rootdisk
+            dataVolume:
+              name: my-vm-{{ .Values.vmIndex }}-volume
+          - name: cloudinitdisk
+            cloudInitNoCloud:
+              userData: |
+                #cloud-config
+                chpasswd:
+                  expire: false
+                password: o8af-owof-vxr8
+                user: rhel
+        interfaces:
+          - name: default
+            masquerade: {}
+      networks:
+        - name: default
+          pod: {}
+      subdomain: headless
