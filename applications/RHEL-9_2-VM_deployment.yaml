@@ -48,4 +48,16 @@ spec:
       networks:
         - name: default
           pod: {}
+      volumes:
+        - name: rootdisk
+          dataVolume:
+            name: my-vm-0-volume
+        - name: cloudinitdisk
+          cloudInitNoCloud:
+            userData: |
+              #cloud-config
+              chpasswd:
+                expire: false
+              password: o8af-owof-vxr8
+              user: rhel
       subdomain: headless
