@@ -1,0 +1,36 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - vm-template.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+configMapGenerator:
+  - name: vm-count
+    literals:
+      - vmCount=10
+
+patchesStrategicMerge:
+  - |-
+    apiVersion: kubevirt.io/v1
+    kind: VirtualMachine
+    metadata:
+      name: my-vm-0
+    spec:
+      template:
+        spec:
+          domain:
+            devices:
+              disks:
+                - name: rootdisk
+                  dataVolume:
+                    name: my-vm-0-volume
+                - name: cloudinitdisk
+                  cloudInitNoCloud:
+                    userData: |
+                      #cloud-config
+                      chpasswd:
+                        expire: false
+                      password: o8af-owof-vxr8
+                      user: rhel
