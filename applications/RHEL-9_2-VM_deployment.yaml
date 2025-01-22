@@ -10,11 +10,18 @@ spec:
   preference:
     name: rhel.9
   dataVolumeTemplates:
-      spec:
-        sourceRef:
-          kind: DataSource
-          name: rhel9
-          namespace: openshift-virtualization-os-images
+  - metadata:
+      name: rhel9-dv
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: rhel9
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
   template:
     metadata:
       labels:
@@ -34,6 +41,10 @@ spec:
         resources:
           requests:
             memory: 4Gi
+      volumes:
+      - name: containerdisk
+        containerDisk:
+          image: kubevirt/fedora-cloud-container-disk-demo:latest
       - name: cloudinitdisk
         cloudInitNoCloud:
           userData: |
@@ -55,11 +66,18 @@ spec:
   preference:
     name: rhel.9
   dataVolumeTemplates:
-      spec:
-        sourceRef:
-          kind: DataSource
-          name: rhel9
-          namespace: openshift-virtualization-os-images
+  - metadata:
+      name: rhel9-dv
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: rhel9
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
   template:
     metadata:
       labels:
@@ -79,6 +97,10 @@ spec:
         resources:
           requests:
             memory: 4Gi
+      volumes:
+      - name: containerdisk
+        containerDisk:
+          image: kubevirt/fedora-cloud-container-disk-demo:latest
       - name: cloudinitdisk
         cloudInitNoCloud:
           userData: |
