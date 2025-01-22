@@ -1,7 +1,7 @@
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: my-vm-0
+  name: my-vm-{{ .Values.vmIndex }}
   namespace: default
 spec:
   running: true
@@ -11,7 +11,7 @@ spec:
     name: rhel.9
   dataVolumeTemplates:
     - metadata:
-        name: my-vm-0-volume
+        name: my-vm-{{ .Values.vmIndex }}-volume
       spec:
         sourceRef:
           kind: DataSource
@@ -33,7 +33,7 @@ spec:
           disks:
           - name: rootdisk
             dataVolume:
-              name: my-vm-0-volume
+              name: my-vm-{{ .Values.vmIndex }}-volume
           - name: cloudinitdisk
             cloudInitNoCloud:
               userData: |
@@ -43,12 +43,15 @@ spec:
                 password: o8af-owof-vxr8
                 user: rhel
         interfaces:
-          - name: default
-            masquerade: {}
+          - bridge: {}
+            model: virtio
+      networks:
+        - name: default
+          pod: {}
       volumes:
         - name: rootdisk
           dataVolume:
-            name: my-vm-0-volume
+            name: my-vm-{{ .Values.vmIndex }}-volume
         - name: cloudinitdisk
           cloudInitNoCloud:
             userData: |
