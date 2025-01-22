@@ -90,7 +90,7 @@ spec:
       volumes:
       - name: containerdisk
         dataVolume:
-          name: rhel9-dv
+          name: rhel9-dv2
       - name: cloudinitdisk
         cloudInitNoCloud:
           userData: |
