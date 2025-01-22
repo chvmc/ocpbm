@@ -45,7 +45,4 @@ spec:
         interfaces:
           - name: default
             masquerade: {}
-      networks:
-        - name: default
-          pod: {}
       subdomain: headless
