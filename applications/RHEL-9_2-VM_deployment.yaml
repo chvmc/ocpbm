@@ -29,7 +29,7 @@ spec:
     spec:
       domain:
         devices:
-          autoattachPodInterface: false
+          autoattachPodInterface: true
           disks:
           - name: rootdisk
             dataVolume:
@@ -43,6 +43,6 @@ spec:
                 password: o8af-owof-vxr8
                 user: rhel
         interfaces:
-          - name: default
-            masquerade: {}
+          - bridge: {}
+            
       subdomain: headless
