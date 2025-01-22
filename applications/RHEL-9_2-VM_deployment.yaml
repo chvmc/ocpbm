@@ -37,9 +37,6 @@ spec:
               bus: virtio
             name: cloudinitdisk
       volumes:
-      - name: containerdisk
-        containerDisk:
-          image: kubevirt/fedora-cloud-container-disk-demo:latest
       - name: cloudinitdisk
         cloudInitNoCloud:
           userData: |
@@ -88,9 +85,6 @@ spec:
               bus: virtio
             name: cloudinitdisk
       volumes:
-      - name: containerdisk
-        containerDisk:
-          image: kubevirt/fedora-cloud-container-disk-demo:latest
       - name: cloudinitdisk
         cloudInitNoCloud:
           userData: |
