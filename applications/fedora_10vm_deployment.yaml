@@ -1,7 +1,7 @@
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: vm-01
+  name: vm-01-changed
   namespace: vm-project-1
 spec:
   running: true
