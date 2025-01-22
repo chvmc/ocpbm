@@ -60,11 +60,8 @@ patchesStrategicMerge:
                     password: o8af-owof-vxr8
                     user: rhel
           interfaces:
-            - name: bridge
+            - bridge: {}
               model: virtio
-          networks:
-            - name: {}
-              pod: {}
           volumes:
             - name: rootdisk
               dataVolume:
