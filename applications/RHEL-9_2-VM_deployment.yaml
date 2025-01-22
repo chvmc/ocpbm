@@ -36,9 +36,6 @@ spec:
           - disk:
               bus: virtio
             name: cloudinitdisk
-        resources:
-          requests:
-            memory: 4Gi
       volumes:
       - name: containerdisk
         containerDisk:
@@ -90,9 +87,6 @@ spec:
           - disk:
               bus: virtio
             name: cloudinitdisk
-        resources:
-          requests:
-            memory: 4Gi
       volumes:
       - name: containerdisk
         containerDisk:
