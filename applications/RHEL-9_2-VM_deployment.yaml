@@ -98,3 +98,404 @@ spec:
             password: rhel
             chpasswd: { expire: False }
             ssh_pwauth: True
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-02
+  namespace: default
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: rhel9-dv03
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: rhel9
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: rhel9-dv03
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-02
+  namespace: default
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: rhel9-dv04
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: rhel9
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: rhel9-dv04
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-02
+  namespace: default
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: rhel9-dv05
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: rhel9
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: rhel9-dv05
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-02
+  namespace: default
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: rhel9-dv06
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: rhel9
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: rhel9-dv06
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-02
+  namespace: default
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: rhel9-dv07
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: rhel9
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: rhel9-dv07
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-02
+  namespace: default
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: rhel9-dv08
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: rhel9
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: rhel9-dv08
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-02
+  namespace: default
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: rhel9-dv09
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: rhel9
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: rhel9-dv09
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-02
+  namespace: default
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: rhel9-dv10
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: rhel9
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: rhel9-dv10
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
+
