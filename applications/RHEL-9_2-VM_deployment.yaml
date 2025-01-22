@@ -102,7 +102,7 @@ spec:
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: vm-02
+  name: vm-03
   namespace: default
 spec:
   running: true
@@ -152,7 +152,7 @@ spec:
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: vm-02
+  name: vm-04
   namespace: default
 spec:
   running: true
@@ -202,7 +202,7 @@ spec:
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: vm-02
+  name: vm-05
   namespace: default
 spec:
   running: true
@@ -252,7 +252,7 @@ spec:
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: vm-02
+  name: vm-06
   namespace: default
 spec:
   running: true
@@ -302,7 +302,7 @@ spec:
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: vm-02
+  name: vm-07
   namespace: default
 spec:
   running: true
@@ -352,7 +352,7 @@ spec:
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: vm-02
+  name: vm-08
   namespace: default
 spec:
   running: true
@@ -402,7 +402,7 @@ spec:
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: vm-02
+  name: vm-09
   namespace: default
 spec:
   running: true
@@ -452,7 +452,7 @@ spec:
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: vm-02
+  name: vm-10
   namespace: default
 spec:
   running: true
