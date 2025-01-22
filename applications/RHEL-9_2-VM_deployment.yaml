@@ -62,7 +62,7 @@ spec:
     name: rhel.9
   dataVolumeTemplates:
   - metadata:
-      name: rhel9-dv
+      name: rhel9-dv2
     spec:
       sourceRef:
         kind: DataSource
