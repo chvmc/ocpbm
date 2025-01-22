@@ -1,0 +1,500 @@
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-01
+  namespace: vm-project-2
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: fedora-dv
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: fedora
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: fedora-dv
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
+
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-02
+  namespace: vm-project-2
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: fedora-dv2
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: fedora
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: fedora-dv2
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-03
+  namespace: vm-project-2
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: fedora-dv03
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: fedora
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: fedora-dv03
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-04
+  namespace: vm-project-2
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: fedora-dv04
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: fedora
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: fedora-dv04
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-05
+  namespace: vm-project-2
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: fedora-dv05
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: fedora
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: fedora-dv05
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-06
+  namespace: vm-project-2
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: fedora-dv06
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: fedora
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: fedora-dv06
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-07
+  namespace: vm-project-2
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: fedora-dv07
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: fedora
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: fedora-dv07
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-08
+  namespace: vm-project-2
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: fedora-dv08
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: fedora
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: fedora-dv08
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-09
+  namespace: vm-project-2
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: fedora-dv09
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: fedora
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: fedora-dv09
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-10
+  namespace: vm-project-2
+spec:
+  running: true
+  instancetype:
+    name: u1.medium
+  preference:
+    name: rhel.9
+  dataVolumeTemplates:
+  - metadata:
+      name: fedora-dv10
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: fedora
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources:
+          requests:
+            storage: '32212254720'
+        storageClassName: sc-gold
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-template
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+      volumes:
+      - name: containerdisk
+        dataVolume:
+          name: fedora-dv10
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            password: rhel
+            chpasswd: { expire: False }
+            ssh_pwauth: True
