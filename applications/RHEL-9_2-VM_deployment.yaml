@@ -36,7 +36,13 @@ spec:
           - disk:
               bus: virtio
             name: cloudinitdisk
+        resources:
+          requests:
+            memory: 4Gi
       volumes:
+      - name: containerdisk
+        dataVolume:
+          name: rhel9-dv
       - name: cloudinitdisk
         cloudInitNoCloud:
           userData: |
@@ -84,7 +90,13 @@ spec:
           - disk:
               bus: virtio
             name: cloudinitdisk
+        resources:
+          requests:
+            memory: 4Gi
       volumes:
+      - name: containerdisk
+        dataVolume:
+          name: rhel9-dv
       - name: cloudinitdisk
         cloudInitNoCloud:
           userData: |
