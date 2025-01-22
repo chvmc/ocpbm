@@ -28,8 +28,6 @@ spec:
         kubevirt.io/vm: vm-template
     spec:
       domain:
-        cpu:
-          cores: 2
         devices:
           disks:
           - disk:
@@ -84,8 +82,6 @@ spec:
         kubevirt.io/vm: vm-template
     spec:
       domain:
-        cpu:
-          cores: 2
         devices:
           disks:
           - disk:
