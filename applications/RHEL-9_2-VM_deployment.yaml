@@ -45,9 +45,6 @@ spec:
         interfaces:
           - name: default
             masquerade: {}
-      networks:
-        - name: default
-          pod: {}
       volumes:
         - name: rootdisk
           dataVolume:
