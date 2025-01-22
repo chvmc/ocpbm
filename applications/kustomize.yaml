@@ -2,7 +2,10 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
 resources:
   - RHEL-9_2-VM_deployment.yaml
-
+metadata:
+  name: my-kustomization
+  namespace: default
+  
 generatorOptions:
   disableNameSuffixHash: true
 
