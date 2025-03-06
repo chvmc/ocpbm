@@ -21,7 +21,7 @@ spec:
         resources:
           requests:
             storage: '32212254720'
-        storageClassName: sc-gold
+        storageClassName: sc-gold-01
   template:
     metadata:
       labels:
@@ -72,7 +72,7 @@ spec:
         resources:
           requests:
             storage: '32212254720'
-        storageClassName: sc-gold
+        storageClassName: sc-gold-01
   template:
     metadata:
       labels:
@@ -122,7 +122,7 @@ spec:
         resources:
           requests:
             storage: '32212254720'
-        storageClassName: sc-gold
+        storageClassName: sc-gold-01
   template:
     metadata:
       labels:
@@ -172,7 +172,7 @@ spec:
         resources:
           requests:
             storage: '32212254720'
-        storageClassName: sc-gold
+        storageClassName: sc-gold-01
   template:
     metadata:
       labels:
@@ -222,7 +222,7 @@ spec:
         resources:
           requests:
             storage: '32212254720'
-        storageClassName: sc-gold
+        storageClassName: sc-gold-01
   template:
     metadata:
       labels:
@@ -272,7 +272,7 @@ spec:
         resources:
           requests:
             storage: '32212254720'
-        storageClassName: sc-gold
+        storageClassName: sc-gold-01
   template:
     metadata:
       labels:
@@ -322,7 +322,7 @@ spec:
         resources:
           requests:
             storage: '32212254720'
-        storageClassName: sc-gold
+        storageClassName: sc-gold-01
   template:
     metadata:
       labels:
@@ -372,7 +372,7 @@ spec:
         resources:
           requests:
             storage: '32212254720'
-        storageClassName: sc-gold
+        storageClassName: sc-gold-01
   template:
     metadata:
       labels:
@@ -422,7 +422,7 @@ spec:
         resources:
           requests:
             storage: '32212254720'
-        storageClassName: sc-gold
+        storageClassName: sc-gold-01
   template:
     metadata:
       labels:
@@ -472,7 +472,7 @@ spec:
         resources:
           requests:
             storage: '32212254720'
-        storageClassName: sc-gold
+        storageClassName: sc-gold-01
   template:
     metadata:
       labels:
