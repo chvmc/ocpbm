@@ -4,7 +4,7 @@ metadata:
   name: vm-01
   namespace: default
 spec:
-  running: false
+  running: true
   instancetype:
     name: u1.medium
   preference:
@@ -55,7 +55,7 @@ metadata:
   name: vm-02
   namespace: default
 spec:
-  running: false
+  running: true
   instancetype:
     name: u1.medium
   preference:
@@ -105,7 +105,7 @@ metadata:
   name: vm-03
   namespace: default
 spec:
-  running: false
+  running: true
   instancetype:
     name: u1.medium
   preference:
@@ -155,7 +155,7 @@ metadata:
   name: vm-04
   namespace: default
 spec:
-  running: false
+  running: true
   instancetype:
     name: u1.medium
   preference:
@@ -205,7 +205,7 @@ metadata:
   name: vm-05
   namespace: default
 spec:
-  running: false
+  running: true
   instancetype:
     name: u1.medium
   preference:
@@ -255,7 +255,7 @@ metadata:
   name: vm-06
   namespace: default
 spec:
-  running: false
+  running: true
   instancetype:
     name: u1.medium
   preference:
@@ -305,7 +305,7 @@ metadata:
   name: vm-07
   namespace: default
 spec:
-  running: false
+  running: true
   instancetype:
     name: u1.medium
   preference:
@@ -355,7 +355,7 @@ metadata:
   name: vm-08
   namespace: default
 spec:
-  running: false
+  running: true
   instancetype:
     name: u1.medium
   preference:
@@ -405,7 +405,7 @@ metadata:
   name: vm-09
   namespace: default
 spec:
-  running: false
+  running: true
   instancetype:
     name: u1.medium
   preference:
@@ -455,7 +455,7 @@ metadata:
   name: vm-10
   namespace: default
 spec:
-  running: false
+  running: true
   instancetype:
     name: u1.medium
   preference:
